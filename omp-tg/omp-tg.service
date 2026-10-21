@@ -1,0 +1,12 @@
+[Unit]
+Description=omp-tg — canal Telegram vers une session d'agent
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/omp-tg serve
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
